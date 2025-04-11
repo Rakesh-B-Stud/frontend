@@ -12,15 +12,17 @@
         <div class="nav-left">
           <button class="menu-btn" onclick="toggleMenu()">&#9776;</button> <!-- Menu Icon -->
         </div>
-      
+        <div class="dropdown-menu" id="dropdownMenu">
+  <a href="index.html">Home</a>
+  <a href="temples.html">Temple</a>
+  <a href="dance.html">Dance</a>
+  <a href="food.html">Food</a>
+  <a href="monuments.html">Monuments</a>
+</div>
+
         <div class="nav-center">
             <img src="images/logo1.png" alt="Travask Logo" style="height: 30px; vertical-align: middle;">
-          <span class="logo">TRAVASK</span>
-        </div>
-      
-        <div class="nav-right">
-          <i class="user-icon">👤</i>
-          <i class="more-icon">&#8942;</i>  <!-- 3 Dot Icon -->
+          <span class="logo"> TRAVASK </span>
         </div>
       </header>
       
@@ -55,7 +57,7 @@
       <div class="card-content">
         <h2>Temples,Monuments...</h2>
         <p>India’s heritage sites reflect centuries of architectural brilliance and cultural depth. From majestic forts to ancient temples, each site tells a story of its glorious past.</p>
-        <a href="#" class="btn">Learn More</a>
+        <a href="temples.html" class="btn">Learn More</a>
       </div>
     </div>
 
@@ -64,7 +66,7 @@
       <div class="card-content">
         <h2>Food Culture</h2>
         <p>Indian food is a celebration of bold spices, rich flavors, and diverse regional recipes. From street snacks to royal feasts, every dish tells a cultural story.</p>
-        <a href="#" class="btn">Learn More</a>
+        <a href="food.html" class="btn">Learn More</a>
       </div>
     </div>
 
@@ -73,7 +75,7 @@
       <div class="card-content">
         <h2>Music,Dance...</h2>
         <p>Indian dance and music are vibrant expressions of tradition and storytelling. From classical ragas to folk rhythms, each performance echoes the soul of India.</p>
-        <a href="#" class="btn">Learn More</a>
+        <a href="dance.html" class="btn">Learn More</a>
       </div>
     </div>
   </section>
@@ -107,7 +109,7 @@
         <p>👋 Hi! Ask me anything about Indian culture and tourism!</p>
       </div>
       <div class="chat-input">
-        <input type="text" placeholder="Type your message..." />
+        <input type="text" id="userInput" placeholder="Type your message..." />
         <button>Send</button>
       </div>
     </div>
