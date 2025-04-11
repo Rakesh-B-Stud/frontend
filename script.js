@@ -9,7 +9,7 @@ function formatBotMessage(text) {
   return text
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // bold
     .replace(/^\* (.*)$/gm, '<li>$1</li>') // bullet points
-    .replace(/<li>.*<\/li>/g, match => `<ul>${match}</ul>`); // wrap list items in ul if any
+    .replace(/(<li>.*?<\/li>)/gs, '<ul>$1</ul>'); // wrap list items in ul
 }
 
 // Handle sending messages and chatbot response
@@ -17,6 +17,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const sendButton = document.querySelector('.chat-input button');
   const inputField = document.querySelector('.chat-input input');
   const chatContent = document.getElementById('chatContent');
+
+  // Restore chat from sessionStorage
+  const savedChat = sessionStorage.getItem('chatHistory');
+  if (savedChat) {
+    chatContent.innerHTML = savedChat;
+    chatContent.scrollTop = chatContent.scrollHeight;
+  }
 
   sendButton.addEventListener('click', sendMessage);
   inputField.addEventListener('keypress', function (e) {
@@ -34,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     userMsg.innerHTML = `<div class="bubble-content"><strong>You</strong> <span class="timestamp">${timestamp}</span><div class="text">${message}</div></div>`;
     chatContent.appendChild(userMsg);
     chatContent.scrollTop = chatContent.scrollHeight;
+    sessionStorage.setItem('chatHistory', chatContent.innerHTML);
 
     inputField.value = "";
 
@@ -43,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     botMsg.innerHTML = `<div class="bubble-content"><em>Bot is typing...</em></div>`;
     chatContent.appendChild(botMsg);
     chatContent.scrollTop = chatContent.scrollHeight;
+    sessionStorage.setItem('chatHistory', chatContent.innerHTML);
 
     fetch('http://127.0.0.1:5000/chat', {
       method: 'POST',
@@ -57,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const formatted = formatBotMessage(data.reply);
         botMsg.innerHTML = `<div class="bubble-content"><strong>Bot</strong> <span class="timestamp">${time}</span><div class="text">${formatted}</div></div>`;
         chatContent.scrollTop = chatContent.scrollHeight;
+        sessionStorage.setItem('chatHistory', chatContent.innerHTML);
       })
       .catch(err => {
         botMsg.innerHTML = "<div class='bubble-content error'>⚠️ Error: Could not fetch response.</div>";
