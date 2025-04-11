@@ -4,8 +4,15 @@ function toggleChat() {
   chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
 }
 
-// Handle sending messages and chatbot response
+// Format bot message by replacing markdown
+function formatBotMessage(text) {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // bold
+    .replace(/^\* (.*)$/gm, '<li>$1</li>') // bullet points
+    .replace(/<li>.*<\/li>/g, match => `<ul>${match}</ul>`); // wrap list items in ul if any
+}
 
+// Handle sending messages and chatbot response
 document.addEventListener('DOMContentLoaded', function () {
   const sendButton = document.querySelector('.chat-input button');
   const inputField = document.querySelector('.chat-input input');
@@ -20,16 +27,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const message = inputField.value.trim();
     if (message === "") return;
 
-    // Add user message to chat box
-    const userMsg = document.createElement('p');
-    userMsg.innerHTML = `<strong>You:</strong> ${message}`;
+    const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    const userMsg = document.createElement("div");
+    userMsg.className = "chat-bubble user";
+    userMsg.innerHTML = `<div class="bubble-content"><strong>You</strong> <span class="timestamp">${timestamp}</span><div class="text">${message}</div></div>`;
     chatContent.appendChild(userMsg);
     chatContent.scrollTop = chatContent.scrollHeight;
 
-    // Clear input field
-    inputField.value = '';
+    inputField.value = "";
 
-    // Call backend chatbot API
+    const botMsg = document.createElement("div");
+    botMsg.className = "chat-bubble bot";
+    botMsg.id = "bot-typing";
+    botMsg.innerHTML = `<div class="bubble-content"><em>Bot is typing...</em></div>`;
+    chatContent.appendChild(botMsg);
+    chatContent.scrollTop = chatContent.scrollHeight;
+
     fetch('http://127.0.0.1:5000/chat', {
       method: 'POST',
       headers: {
@@ -39,18 +53,13 @@ document.addEventListener('DOMContentLoaded', function () {
     })
       .then(response => response.json())
       .then(data => {
-        setTimeout(() => {
-          const botMsg = document.createElement('p');
-          botMsg.innerHTML = `<strong>Bot:</strong> ${data.reply}`;
-          chatContent.appendChild(botMsg);
-          chatContent.scrollTop = chatContent.scrollHeight;
-        }, 0);
-      })
-      .catch(error => {
-        const botMsg = document.createElement('p');
-        botMsg.innerHTML = `<strong>Bot:</strong> Error: ${error}`;
-        chatContent.appendChild(botMsg);
+        const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        const formatted = formatBotMessage(data.reply);
+        botMsg.innerHTML = `<div class="bubble-content"><strong>Bot</strong> <span class="timestamp">${time}</span><div class="text">${formatted}</div></div>`;
         chatContent.scrollTop = chatContent.scrollHeight;
+      })
+      .catch(err => {
+        botMsg.innerHTML = "<div class='bubble-content error'>⚠️ Error: Could not fetch response.</div>";
       });
   }
 });

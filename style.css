@@ -244,4 +244,48 @@
   cursor: pointer;
 }
 
- 
+.chat-bubble {
+  max-width: 80%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+}
+
+.chat-bubble.user {
+  background-color: #ffe4cc;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+
+.chat-bubble.bot {
+  background-color: #f3f3f3;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
+
+.bubble-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.bubble-content strong {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.timestamp {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 2px;
+  margin-bottom: 6px;
+}
+
+.text {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  white-space: pre-line; /* ✨ Maintains line breaks */
+}
