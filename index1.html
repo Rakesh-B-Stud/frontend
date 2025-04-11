@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CultureConnect</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-left">
+          <button class="menu-btn" onclick="toggleMenu()">&#9776;</button> <!-- Menu Icon -->
+        </div>
+      
+        <div class="nav-center">
+            <img src="images/logo1.png" alt="Travask Logo" style="height: 30px; vertical-align: middle;">
+          <span class="logo">TRAVASK</span>
+        </div>
+      
+        <div class="nav-right">
+          <i class="user-icon">👤</i>
+          <i class="more-icon">&#8942;</i>  <!-- 3 Dot Icon -->
+        </div>
+      </header>
+      
+  <div class="slider">
+    <div class="slides">
+      <img src="images/yana.jpg" alt="Culture Slide 1">
+      <img src="images/egypt.jpg" alt="Culture Slide 3">
+      <img src="images/img2.jpg" alt="Culture Slide 2">
+      <img src="images/paris.jpg" alt="Culture Slide 3">
+      <img src="images/palace.jpg" alt="Culture Slide 3">
+      <img src="images/e1.jpg" alt="Culture Slide 3">
+      
+      
+    </div>
+    <div class="slider-text">
+      <h1>TRAVASK</h1>
+      <p>Explore World's rich cultural roots and travel to breathtaking destinations where heritage comes alive.</p>
+      <a href="#about" class="cta-button">Start Exploring</a>
+    </div>
+  </div>
+
+  <section id="about" class="about">
+    <h2>Why Travask?</h2>
+    <p>
+      Travask bridges the gap between traditional heritage and modern tourism. Discover art, music, dance, crafts, and spiritual experiences from India's diverse cultural landscape — all mapped, explained, and travel-ready.
+    </p>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <img src="images/monuments.jpg" alt="Temples,monuments.." />
+      <div class="card-content">
+        <h2>Temples,Monuments...</h2>
+        <p>India’s heritage sites reflect centuries of architectural brilliance and cultural depth. From majestic forts to ancient temples, each site tells a story of its glorious past.</p>
+        <a href="#" class="btn">Learn More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/food.jpg" alt="Food Culture" />
+      <div class="card-content">
+        <h2>Food Culture</h2>
+        <p>Indian food is a celebration of bold spices, rich flavors, and diverse regional recipes. From street snacks to royal feasts, every dish tells a cultural story.</p>
+        <a href="#" class="btn">Learn More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/dance.jpg" alt="Music,Dance.." />
+      <div class="card-content">
+        <h2>Music,Dance...</h2>
+        <p>Indian dance and music are vibrant expressions of tradition and storytelling. From classical ragas to folk rhythms, each performance echoes the soul of India.</p>
+        <a href="#" class="btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div style="text-align: center; margin-top: 1rem;">
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" style="margin: 0 15px; color: #25D366; font-size: 2rem; text-decoration: none;">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <a href="https://instagram.com/yourusername" target="_blank" style="margin: 0 15px; color: #C13584; font-size: 2rem; text-decoration: none;">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://twitter.com/yourhandle" target="_blank" style="margin: 0 15px; color: #1DA1F2; font-size: 2rem; text-decoration: none;">
+            <i class="fab fa-twitter" aria-hidden="true"></i>
+          </a>
+      </div>
+      “Travel Smarter. Explore Deeper. Live Freely.” | Contact: travask@gmail.com
+  </footer>
+<!-- Fixed Chatbot -->
+<div class="chatbot-fixed">
+    <div class="chat-toggle" onclick="toggleChat()">
+      💬 Chat
+    </div>
+  
+    <div class="chat-box" id="chatBox">
+      <div class="chat-header">
+        Travask Chatbot
+        <span class="chat-close" onclick="toggleChat()">×</span>
+      </div>
+      <div class="chat-content" id="chatContent">
+        <p>👋 Hi! Ask me anything about Indian culture and tourism!</p>
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Type your message..." />
+        <button>Send</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

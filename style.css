@@ -1,0 +1,247 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-left .menu-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-center .logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0077b6; /* Travask Theme Color */
+}
+
+
+.nav-right i {
+  margin-left: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #fff7e6, #ffe4b3);
+      color: #333;
+    }
+    .slider {
+      position: relative;
+      overflow: hidden;
+      height: 90vh;
+    }
+    .slides {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      animation: slide 50s infinite;
+      transition: transform 0.8s ease-in-out 0.2s;
+    }
+    .slides img {
+      width: 100vw;
+      height: 100%;
+      object-fit: cover;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100vw); }
+      66% { transform: translateX(-200vw); }
+      100% { transform: translateX(0); }
+    }
+    .slider-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+    .slider-text h1 {
+      font-size: 5rem;
+    }
+    .slider-text p {
+      font-size: 1.6rem;
+      padding: 3rem;
+    }
+    .cta-button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      background: #d35400;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    section.about {
+      padding: 3rem 2rem;
+      text-align: center;
+      background: #fff;
+    }
+    section.about h2 {
+      color: #d35400;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    section.about p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: auto;
+      color: #555;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: #fff;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 1rem;
+    }
+    .card-content h2 {
+      font-size: 1.2rem;
+      color: #d35400;
+    }
+    .card-content p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+    .btn {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem 0;       /* Taller button */
+  font-size: 1.1rem;
+  text-align: center;
+  background: #d35400;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+.chatbot-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.chat-toggle {
+  background: #d35400;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s;
+}
+
+.chat-toggle:hover {
+  background: #b84300;
+}
+
+.chat-box {
+  width: 340px;
+  height: 400px;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+}
+
+.chat-header {
+  background: #d35400;
+  color: white;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-close {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.chat-content {
+  padding: 1rem;
+  flex: 1;
+  overflow-y: auto;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 0.5rem;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.chat-input button {
+  margin-left: 0.5rem;
+  background: #d35400;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+ 
