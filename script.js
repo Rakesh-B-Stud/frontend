@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chatContent.appendChild(botMsg);
     chatContent.scrollTop = chatContent.scrollHeight;
     sessionStorage.setItem('chatHistory', chatContent.innerHTML);
-
+    
     fetch('http://127.0.0.1:5000/chat', {
       method: 'POST',
       headers: {
@@ -100,19 +100,13 @@ document.addEventListener('click', function(event) {
   }
 });
 
-// Toggle Chat Display
-function toggleChat() {
-  const chatBox = document.getElementById("chatBox");
-  chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
-}
-
 // Toggle Menu Display
 function toggleMenu() {
   const menu = document.getElementById('dropdownMenu');
   menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 }
 
-// Close Menu if clicked outside
+// Close menu when clicking outside
 document.addEventListener('click', function (event) {
   const menu = document.getElementById('dropdownMenu');
   const button = document.querySelector('.menu-btn');

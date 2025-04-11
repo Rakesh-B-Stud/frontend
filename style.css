@@ -323,3 +323,10 @@ html {
   line-height: 1.5;
   white-space: pre-line; /* ✨ Maintains line breaks */
 }
+.dropdown, .chatbox {
+  display: none;
+}
+
+.show {
+  display: block;
+}
