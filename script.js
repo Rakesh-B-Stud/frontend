@@ -66,11 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const formatted = formatBotMessage(data.reply);
         botMsg.innerHTML = `<div class="bubble-content"><strong>Bot</strong> <span class="timestamp">${time}</span><div class="text">${formatted}</div></div>`;
         chatContent.scrollTop = chatContent.scrollHeight;
-        sessionStorage.setItem('chatHistory', chatContent.innerHTML);
-        
-      })
-      .catch(err => {
-        botMsg.innerHTML = "<div class='bubble-content error'>⚠️ Error: Could not fetch response.</div>";
       });
   }
 });
