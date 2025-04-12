@@ -330,3 +330,62 @@ html {
 .show {
   display: block;
 }
+.panic-button {
+  background-color: #e60000;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.panic-button:hover {
+  background-color: #cc0000;
+}
+  .panic-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .panic-button {
+    background-color: #e60000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .panic-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    right: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+  }
+
+  .panic-dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s;
+  }
+
+  .panic-dropdown-content a:hover {
+    background-color: #f2f2f2;
+  }
+
+  .panic-dropdown:hover .panic-dropdown-content {
+    display: block;
+  }
