@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Temple Heritage - Travask</title>
+  <link rel="icon" href="images/logo1.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fffdf6;
+      color: #333;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color:  #d35400;
+      margin-bottom: 3rem;
+    }
+
+    .temple-section {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .temple-section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .temple-image {
+      flex: 1;
+      max-width: 45%;
+    }
+
+    .temple-image img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .temple-content {
+      flex: 1;
+      max-width: 50%;
+    }
+
+    .temple-title {
+      font-size: 1.8rem;
+      color:  #d35400;
+      margin-bottom: 1rem;
+    }
+
+    .temple-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.7rem 1.5rem;
+      background-color:  #d35400;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .temple-section {
+        flex-direction: column !important;
+      }
+
+      .temple-image, .temple-content {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Explore India's Temple Heritage</h1>
+
+  <!-- Tamil Nadu -->
+  <div class="temple-section">
+    <div class="temple-image">
+      <img src="images/meenakshi.jpg" alt="Meenakshi Temple, Tamil Nadu" />
+    </div>
+    <div class="temple-content">
+      <div class="temple-title">Meenakshi Temple, Tamil Nadu</div>
+      <div class="temple-description">
+        Meenakshi Temple, located in Madurai, Tamil Nadu, is an iconic Hindu temple dedicated to Goddess Meenakshi, an incarnation of Parvati, and her consort, Lord Shiva. It is renowned for its stunning Dravidian architecture, featuring towering gopurams (gateways) adorned with intricate sculptures and vibrant colors. One of the oldest and most stunning temples in India, the Meenakshi Temple in Madurai is dedicated to Goddess Meenakshi and Lord Sundareswarar. Its towering gopurams are adorned with thousands of sculptures.
+        <a href="https://en.wikipedia.org/wiki/Meenakshi_Temple" target="_blank">More</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Odisha -->
+  <div class="temple-section">
+    <div class="temple-image">
+      <img src="images/suntemple.jpg" alt="Sun Temple, Odisha" />
+    </div>
+    <div class="temple-content">
+      <div class="temple-title">Sun Temple, Odisha</div>
+      <div class="temple-description">
+        The Konark Sun Temple, built in the 13th century, is a UNESCO World Heritage Site known for its stunning architecture shaped like a grand chariot dedicated to the Sun God, Surya
+        The 13th-century Sun Temple at Konark is shaped like a giant chariot. It represents the pinnacle of Odishan temple architecture and is a UNESCO World Heritage site.
+        <a href="https://en.wikipedia.org/wiki/Konark_Sun_Temple" target="_blank">More</a></div>
+    </div>
+  </div>
+
+  <!-- Uttar Pradesh -->
+  <div class="temple-section">
+    <div class="temple-image">
+      <img src="images/kashi.jpg" alt="Kashi Vishwanath, Varanasi" />
+    </div>
+    <div class="temple-content">
+      <div class="temple-title">Kashi Vishwanath, Varanasi</div>
+      <div class="temple-description">
+        Kashi, or Varanasi, is one of India’s oldest spiritual cities. People say the city is as old as time itself. In its heart lies a temple so sacred that millions come here every year seeking peace. That holy shrine is the Kashi Vishwanath Temple
+        <a href="https://en.wikipedia.org/wiki/Kashi_Vishwanath_Temple" target="_blank">More</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Karnataka -->
+  <div class="temple-section">
+    <div class="temple-image">
+      <img src="images/virupaksha.jpg" alt="Virupaksha Temple, Hampi" />
+    </div>
+    <div class="temple-content">
+      <div class="temple-title">Virupaksha Temple, Karnataka</div>
+      <div class="temple-description">
+        The Virupaksha Temple, dedicated to Lord Shiva, is a UNESCO World Heritage Site, showcasing intricate Dravidian architecture and serving as a vital pilgrimage site in Hampi.
+The temple, built in the 7th century, is renowned for its stunning gopuram and vibrant murals, reflecting the rich cultural heritage of the Vijayanagara Empire.
+<a href="https://en.wikipedia.org/wiki/Virupaksha_Temple,_Hampi" target="_blank">More</a></div>
+ </div>
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin: 2rem;">
+    <a href="index.html" class="back-btn">← Back to Home</a>
+    <a href="https://en.wikipedia.org/wiki/List_of_Hindu_temples_in_India" class="back-btn" style="background-color:  #d35400;" target="_blank">Explore More →</a>
+
+  </div>
+
+</body>
+</html>

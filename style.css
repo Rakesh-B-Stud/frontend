@@ -1,3 +1,37 @@
+/* Dropdown Menu Styling */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.6);  /* Transparent Background */
+  border-radius: 12px;
+  padding: 15px 20px;
+  z-index: 1000;
+  width: 180px;  /* Bigger Size */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px); /* Glass Effect */
+}
+
+.dropdown-menu a {
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  padding: 12px 10px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -23,12 +57,6 @@
   color: #0077b6; /* Travask Theme Color */
 }
 
-
-.nav-right i {
-  margin-left: 15px;
-  font-size: 22px;
-  cursor: pointer;
-}
 
     body {
       margin: 0;
@@ -169,6 +197,8 @@
   background: #d35400;
   color: white;
   padding: 0.75rem 1.25rem;
+  width: 270px;
+  text-align: center;
   border-radius: 25px;
   cursor: pointer;
   font-weight: bold;
@@ -244,6 +274,10 @@
   cursor: pointer;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .chat-bubble {
   max-width: 80%;
   margin: 10px 0;
@@ -288,4 +322,11 @@
   color: #333;
   line-height: 1.5;
   white-space: pre-line; /* ✨ Maintains line breaks */
+}
+.dropdown, .chatbox {
+  display: none;
+}
+
+.show {
+  display: block;
 }

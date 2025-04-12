@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bot Response</title>
+  <link rel="icon" href="images/logo1.png" type="image/png">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff7e6;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      position: relative;
+    }
+
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin: 1rem 0;
+    }
+
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-center img {
+      height: 40px;
+    }
+
+    .nav-center h2 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #333;
+    }
+
+    .home-btn {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #ff9933;
+      font-weight: bold;
+    }
+
+    .home-btn:hover {
+      color: #e68a00;
+      text-decoration: underline;
+    }
+
+    #chatArea {
+      flex: 1;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .message {
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      margin: 0.5rem 0;
+      max-width: 80%;
+    }
+
+    .user {
+      background: #ffe4cc;
+      align-self: flex-end;
+      text-align: right;
+    }
+
+    .bot {
+      background: #eee;
+      align-self: flex-start;
+    }
+
+    #inputArea {
+      display: flex;
+      padding: 1rem;
+      border-top: 1px solid #ccc;
+      background-color: #fff2db;
+    }
+
+    #newMessage {
+      flex: 1;
+      padding: 0.7rem 1rem 0.7rem 2.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-right: 0.5rem;
+      background-image: url('images/logo1.png'); /* your logo path */
+      background-repeat: no-repeat;
+      background-position: 8px center;
+      background-size: 20px 20px;
+    }
+
+    button {
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      background-color: #ff9933;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e6000f;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <button class="home-btn" onclick="goHome()">Home</button>
+    <div class="nav-center">
+      <img src="images/logo1.png" alt="Travask Logo">
+      <h2>Talk with TRAVASK</h2>
+    </div>
+  </div>
+
+  <div id="chatArea"></div>
+
+  <div id="inputArea">
+    <input type="text" id="newMessage" placeholder="Send another message..." />
+    <button onclick="sendNewMessage()">Send</button>
+  </div>
+
+  <script>
+    const chatArea = document.getElementById("chatArea");
+    const lastMessage = localStorage.getItem("lastUserMessage");
+
+    if (lastMessage) {
+      showMessage(lastMessage, "user");
+      fetchBotReply(lastMessage);
+    }
+
+    function showMessage(text, sender) {
+      const div = document.createElement("div");
+      div.className = `message ${sender}`;
+      div.textContent = `${sender === "user" ? "You" : "Bot"}: ${text}`;
+      chatArea.appendChild(div);
+      chatArea.scrollTop = chatArea.scrollHeight;
+    }
+
+    function fetchBotReply(message) {
+      fetch("http://127.0.0.1:5000/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message })
+      })
+      .then(res => res.json())
+      .then(data => showMessage(data.reply, "bot"))
+      .catch(err => showMessage("Error getting response.", "bot"));
+    }
+
+    function sendNewMessage() {
+      const input = document.getElementById("newMessage");
+      const message = input.value.trim();
+      if (!message) return;
+
+      showMessage(message, "user");
+      fetchBotReply(message);
+      input.value = "";
+    }
+
+    function goHome() {
+      window.location.href = "index.html"; // Change this to your homepage path
+    }
+  </script>
+</body>
+</html>

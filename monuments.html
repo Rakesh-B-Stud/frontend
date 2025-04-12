@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Monuments of India - Travask</title>
+  <link rel="icon" href="images/logo1.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fffdf6;
+      color: #333;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d35400;
+      margin-bottom: 3rem;
+    }
+
+    .monument-section {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .monument-section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .monument-image {
+      flex: 1;
+      max-width: 45%;
+    }
+
+    .monument-image img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .monument-content {
+      flex: 1;
+      max-width: 50%;
+    }
+
+    .monument-title {
+      font-size: 1.8rem;
+      color: #d35400;
+      margin-bottom: 1rem;
+    }
+
+    .monument-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.7rem 1.5rem;
+      background-color: #d35400;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .monument-section {
+        flex-direction: column !important;
+      }
+
+      .monument-image, .monument-content {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Discover India’s Monumental Heritage</h1>
+
+  <!-- Taj Mahal -->
+  <div class="monument-section">
+    <div class="monument-image">
+      <img src="images/taj.jpg" alt="Taj Mahal" />
+    </div>
+    <div class="monument-content">
+      <div class="monument-title">Taj Mahal - Agra</div>
+      <div class="monument-description">
+        Taj Mahal is located in Agra, a city in Uttar Pradesh. This famous monument is situated on the banks of the river Yamuna. Taj Mahal was built in 1632 by the Mughal emperor Shah Jahan. Taj Mahal is made of white marble. The monument is one of the seven wonders of the world. One of the Seven Wonders of the World, the Taj Mahal is a symbol of eternal love. This white marble mausoleum built by Emperor Shah Jahan continues to captivate hearts globally.
+      </div>
+    </div>
+  </div>
+
+  <!-- Qutub Minar -->
+  <div class="monument-section">
+    <div class="monument-image">
+      <img src="images/qutub.jpg" alt="Qutub Minar" />
+    </div>
+    <div class="monument-content">
+      <div class="monument-title">Qutub Minar - Delhi</div>
+      <div class="monument-description">
+        Qutub Minar, in Delhi, India, is a historic masterpiece. Qutb-ud-din Aibak constructed it during the 12th century. Standing at 73 meters (240 feet), it’s a remarkable tower. The Minar features intricate carvings and Islamic architecture. This towering minaret, built in the 12th century, reflects the architectural excellence of the Delhi Sultanate. It's a UNESCO World Heritage Site and a major tourist attraction.
+      </div>
+    </div>
+  </div>
+
+  <!-- Hampi -->
+  <div class="monument-section">
+    <div class="monument-image">
+      <img src="images/hampi.jpg" alt="Hampi Ruins" />
+    </div>
+    <div class="monument-content">
+      <div class="monument-title">Hampi - Karnataka</div>
+      <div class="monument-description">
+        This temple in the Sacred Centre is famous for its Vijayanagara style of architecture. It was one of the last constructions of the Vijayanagara Empire before it was captured by enemies. It is located between the Matanga hills and Gandhamadana.Once the capital of the Vijayanagara Empire, Hampi is a historical treasure with stunning stone architecture, temple complexes, and mesmerizing ruins that tell a story of grandeur.
+      </div>
+    </div>
+  </div>
+
+  <!-- Konark Sun Temple -->
+  <div class="monument-section">
+    <div class="monument-image">
+      <img src="images/konark.jpg" alt="Konark Sun Temple" />
+    </div>
+    <div class="monument-content">
+      <div class="monument-title">Sun Temple - Odisha</div>
+      <div class="monument-description">
+        The Sun Temple of Konark, a UNESCO World Heritage Site in Odisha, India, is an architectural masterpiece dedicated to Surya, the Sun God. Built in the 13th century by King Narasimhadeva I of the Eastern Ganga Dynasty, this chariot-shaped temple is one of the finest examples of Kalinga architecture.The Sun Temple of Konark, shaped like a chariot, showcases incredible craftsmanship. Its stone wheels, walls, and sculptures portray the artistic brilliance of ancient India.
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin: 2rem;">
+    <a href="index.html" class="back-btn">← Back to Home</a>
+    <a href="https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_in_India" class="back-btn" target="_blank">Explore More →</a>
+  </div>
+
+</body>
+</html>

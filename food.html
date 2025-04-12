@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Food Culture - Travask</title>
+  <link rel="icon" href="images/logo1.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fffdf6;
+      color: #333;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d35400;
+      margin-bottom: 3rem;
+    }
+
+    .state-section {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .state-section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .state-image {
+      flex: 1;
+      max-width: 45%;
+    }
+
+    .state-image img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .state-content {
+      flex: 1;
+      max-width: 50%;
+    }
+
+    .state-title {
+      font-size: 1.8rem;
+      color: #d35400;
+      margin-bottom: 1rem;
+    }
+
+    .state-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.7rem 1.5rem;
+      background-color: #d35400;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .state-section {
+        flex-direction: column !important;
+      }
+
+      .state-image, .state-content {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Explore Indian Food Culture</h1>
+
+  <!-- Punjab -->
+  <div class="state-section">
+    <div class="state-image">
+      <img src="images/punjab.jpg" alt="Punjabi Food" />
+    </div>
+    <div class="state-content">
+      <div class="state-title">Punjab</div>
+      <div class="state-description">
+        Punjabi food culture is renowned for its rich flavors and hearty dishes, heavily influenced by the region's agricultural practices. Staple ingredients include wheat, dairy products like ghee and paneer, and an array of spices, which come together in iconic dishes such as makki di roti served with sarson da saag. Meals are often communal, reflecting the warm hospitality of Punjabi people who celebrate their vibrant culture through food during festivals and gatherings. Butter chicken, sarson da saag, and makki di roti are iconic dishes from Punjab. Known for its rich, spicy, and hearty cuisine, Punjabi food reflects the bold spirit of its people.
+        <a href="https://en.wikipedia.org/wiki/Punjabi_cuisine" target="_blank">More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kerala -->
+  <div class="state-section">
+    <div class="state-image">
+      <img src="images/kerala.jpg" alt="Kerala Food" />
+    </div>
+    <div class="state-content">
+      <div class="state-title">Kerala</div>
+      <div class="state-description">
+        Kerala's food culture is a vibrant blend of spices, coconut, and a rich variety of both vegetarian and non-vegetarian dishes, reflecting its diverse heritage and culinary traditions.
+Kerala is renowned for its unique cuisine, characterized by the extensive use of spices like black pepper, cardamom, and cinnamon, which give its dishes a distinct flavor. Kerala’s cuisine features coconut-rich flavors and a wide variety of seafood. The traditional Sadya, served on banana leaves, showcases the cultural richness and hospitality of Kerala.
+<a href="https://en.wikipedia.org/wiki/Kerala_cuisine" target="_blank">More</a>
+</div>
+    </div>
+  </div>
+
+  <!-- Rajasthan -->
+  <div class="state-section">
+    <div class="state-image">
+      <img src="images/rajasthan.jpg" alt="Rajasthani Food" />
+    </div>
+    <div class="state-content">
+      <div class="state-title">Rajasthan</div>
+      <div class="state-description">
+        ajasthan's food culture is rich and diverse, featuring iconic dishes like Dal Baati Churma and Laal Maas, reflecting the state's royal heritage and the influence of its arid climate.
+The cuisine is characterized by bold flavors, spices, and a variety of vegetarian and non-vegetarian dishes, showcasing the creativity of local cooks in using limited resources. Rajasthani cuisine is known for dishes like dal baati churma and gatte ki sabzi. Despite the arid climate, the food is flavorful, spicy, and preserves a long culinary legacy.
+<a href="https://en.wikipedia.org/wiki/Rajasthani_cuisine" target="_blank">More</a>
+</div>
+    </div>
+  </div>
+
+  <!-- kolkotta -->
+  <div class="state-section">
+    <div class="state-image">
+      <img src="images/kokkotha.jpg" alt="Tamil Nadu Food" />
+    </div>
+    <div class="state-content">
+      <div class="state-title">Tamil Nadu</div>
+      <div class="state-description">
+        Kolkata's food culture is a vibrant tapestry, blending traditional Bengali cuisine with influences from Mughal, British, and Chinese culinary traditions.
+Street food plays a vital role in the city's culinary scene, with iconic items such as Phuchka and Kathi Rolls exemplifying the local flavors.
+<a href="https://en.wikipedia.org/wiki/Bengali_cuisine" target="_blank">More</a>
+</div>
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 2rem;">
+    <a href="index.html" class="back-btn">← Back to Home</a>
+    <a href="https://en.wikipedia.org/wiki/Indian_cuisine" class="back-btn" style="background-color: #d35400;" target="_blank">Explore More →</a>
+  </div>  
+
+</body>
+</html>

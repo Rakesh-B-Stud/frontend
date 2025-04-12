@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chatContent.appendChild(botMsg);
     chatContent.scrollTop = chatContent.scrollHeight;
     sessionStorage.setItem('chatHistory', chatContent.innerHTML);
-
+    
     fetch('http://127.0.0.1:5000/chat', {
       method: 'POST',
       headers: {
@@ -66,10 +66,52 @@ document.addEventListener('DOMContentLoaded', function () {
         const formatted = formatBotMessage(data.reply);
         botMsg.innerHTML = `<div class="bubble-content"><strong>Bot</strong> <span class="timestamp">${time}</span><div class="text">${formatted}</div></div>`;
         chatContent.scrollTop = chatContent.scrollHeight;
-        sessionStorage.setItem('chatHistory', chatContent.innerHTML);
-      })
-      .catch(err => {
-        botMsg.innerHTML = "<div class='bubble-content error'>⚠️ Error: Could not fetch response.</div>";
       });
+  }
+});
+
+document.getElementById("userInput").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    const userMessage = this.value.trim();
+    if (!userMessage) return;
+
+    // Save message to sessionStorage or URL param
+    localStorage.setItem("lastUserMessage", userMessage);
+
+    // Open the new tab with a different HTML page
+    window.open("response.html", "_blank");
+
+    this.value = ""; // clear input
+  }
+});
+
+const chatWrapper = document.getElementById('chatWrapper');
+const openChatBtn = document.getElementById('openChatBtn');
+
+openChatBtn.addEventListener('click', () => {
+  chatWrapper.style.display = 'block';
+});
+
+document.addEventListener('click', function(event) {
+  const isClickInside = chatWrapper.contains(event.target) || openChatBtn.contains(event.target);
+  if (!isClickInside) {
+    chatWrapper.style.display = 'none';
+  }
+});
+
+// Toggle Menu Display
+function toggleMenu() {
+  const menu = document.getElementById('dropdownMenu');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', function (event) {
+  const menu = document.getElementById('dropdownMenu');
+  const button = document.querySelector('.menu-btn');
+
+  if (!menu.contains(event.target) && !button.contains(event.target)) {
+    menu.style.display = 'none';
   }
 });

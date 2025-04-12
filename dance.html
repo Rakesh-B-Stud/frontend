@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dance Heritage - Travask</title>
+  <link rel="icon" href="images/logo1.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fffdf6;
+      color: #333;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d35400;
+      margin-bottom: 3rem;
+    }
+
+    .dance-section {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .dance-section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .dance-image {
+      flex: 1;
+      max-width: 45%;
+    }
+
+    .dance-image img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .dance-content {
+      flex: 1;
+      max-width: 50%;
+    }
+
+    .dance-title {
+      font-size: 1.8rem;
+      color: #d35400;
+      margin-bottom: 1rem;
+    }
+
+    .dance-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.7rem 1.5rem;
+      background-color: #d35400;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .dance-section {
+        flex-direction: column !important;
+      }
+
+      .dance-image, .dance-content {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Explore India's Dance Heritage</h1>
+
+  <!-- Bharatanatyam -->
+  <div class="dance-section">
+    <div class="dance-image">
+      <img src="images/bharatanatyam.jpg" alt="Bharatanatyam Dance" />
+    </div>
+    <div class="dance-content">
+      <div class="dance-title">Bharatanatyam - Tamil Nadu</div>
+      <div class="dance-description">
+        Bharatanatyam is one of the oldest classical dance forms, known for its grace, expressions, and sculptural poses. It originated in Tamil Nadu's temples and tells stories through gestures and rhythm.
+        haratanatyam is a classical Indian dance form originating from Tamil Nadu, known for its expressive storytelling, intricate hand gestures, and rhythmic footwork.
+Bharatanatyam is a vibrant dance that combines spiritual themes with artistic expression, showcasing the rich cultural heritage of South India.
+<a href="https://en.wikipedia.org/wiki/Bharatanatyam" target="_blank">More</a>
+</div>
+    </div>
+  </div>
+
+  <!-- Kathak -->
+  <div class="dance-section">
+    <div class="dance-image">
+      <img src="images/kathakk.jpg" alt="Kathak Dance" />
+    </div>
+    <div class="dance-content">
+      <div class="dance-title">Kathak - Uttar Pradesh</div>
+      <div class="dance-description">
+        Kathak evolved in the temples of North India and later flourished under Mughal patronage. It is known for its intricate footwork, fast spins, and emotive storytelling through expressions.
+Kathak is a classical dance form originating from North India, characterized by intricate footwork, expressive gestures, and storytelling through dance
+<a href="https://en.wikipedia.org/wiki/Kathak" target="_blank">More</a>
+</div>
+    </div>
+  </div>
+
+  <!-- Odissi -->
+  <div class="dance-section">
+    <div class="dance-image">
+      <img src="images/odissi.jpg" alt="Odissi Dance" />
+    </div>
+    <div class="dance-content">
+      <div class="dance-title">Odissi - Odisha</div>
+      <div class="dance-description">
+        Odissi is a soft, graceful classical dance from Odisha characterized by fluid movements and devotional themes. It often depicts tales of Krishna and Radha.
+Odissi dance is a classical Indian art form characterized by its intricate movements, expressive storytelling, exquisite postures, and rich traditional music, deeply rooted in the cultural heritage of Odisha
+<a href="https://en.wikipedia.org/wiki/Odissi" target="_blank">More</a>
+</div>
+    </div>
+  </div>
+
+  <!-- Kathakali -->
+  <div class="dance-section">
+    <div class="dance-image">
+      <img src="images/kathakk.jpg" alt="Kathakali Dance" />
+    </div>
+    <div class="dance-content">
+      <div class="dance-title">Kathakali - Kerala</div>
+      <div class="dance-description">
+        Kathakali is a visually dramatic dance form from Kerala, famous for its elaborate costumes, painted faces, and powerful storytelling using mudras and expressions.
+        Kathakali is a classical Indian dance form originating from Kerala, known for its highly stylized makeup, elaborate costumes, and vibrant performances that depict stories from Hindu epics like the Ramayana and Mahabharata.
+        <a href="https://en.wikipedia.org/wiki/Kathakali" target="_blank">More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin: 2rem;">
+    <a href="index.html" class="back-btn">← Back to Home</a>
+    <a href="https://en.wikipedia.org/wiki/Dance_in_India" class="back-btn" target="_blank">Explore More →</a>
+  </div>
+
+</body>
+</html>
